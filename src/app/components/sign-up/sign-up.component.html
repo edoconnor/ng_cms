@@ -1,53 +1,53 @@
-<div class="displayTable">
-  <div class="displayTableCell">
-    <div class="authBlock">
-      <h3>Sign Up</h3>
-      <div class="formGroup">
+<body class="text-center mx-auto mt-5">
+  <main class="form-signin">
+    <form>
+      <div>
+        <img src="/assets/angular.svg" alt="Angular Logo" height="84" />
+      </div>
+      <h1 class="h3 mt-3 mb-3 fw-normal">Register</h1>
+
+      <div class="form-floating">
         <input
-          type="email"
-          class="formControl"
-          placeholder="Email Address"
+          type="text"
+          class="form-control"
+          id="floatingInput"
+          placeholder="userEmail"
           #userEmail
           required
         />
+        <label for="floatingInput">Email</label>
       </div>
-      <div class="formGroup">
+
+      <div class="form-floating">
         <input
           type="password"
-          class="formControl"
+          class="form-control"
+          id="floatingPassword"
           placeholder="Password"
-          #userPwd
+          #userPassword
           required
         />
+        <label for="floatingPassword">Password</label>
       </div>
-      <div class="formGroup">
-        <input
-          type="button"
-          class="btn btnPrimary"
-          value="Sign Up"
-          (click)="authService.SignUp(userEmail.value, userPwd.value)"
-        />
-      </div>
-      <div class="formGroup">
-        <span class="or"><span class="orInner">Or</span></span>
-      </div>
-      <!-- Continue with Google -->
-      <div class="formGroup">
-        <button
-          type="button"
-          class="btn googleBtn"
-          (click)="authService.GoogleAuth()"
-        >
-          <i class="fab fa-google-plus-g"></i>
-          Continue with Google
-        </button>
-      </div>
-    </div>
-    <div class="redirectToLogin">
-      <span
-        >Already have an account?
-        <span class="redirect" routerLink="/sign-in">Log In</span></span
+
+      <button
+        type="button"
+        class="signin-btn w-100 btn btn-outline-primary"
+        (click)="authService.SignUp(userEmail.value, userPassword.value)"
       >
-    </div>
-  </div>
-</div>
+        Register
+      </button>
+      <div class="redirectToLogin">
+        <div class="redirect">
+          <button
+            type="button"
+            class="register btn btnPrimary"
+            [routerLink]="['/sign-in']"
+          >
+            Already Registered?
+          </button>
+        </div>
+      </div>
+    </form>
+  </main>
+</body>

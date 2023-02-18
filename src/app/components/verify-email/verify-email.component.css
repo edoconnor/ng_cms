@@ -1,0 +1,11 @@
+.displayTable{
+    max-width: 500px;
+    background-color: #ecf0f1;
+    padding: 1.5rem;
+}
+h3 {
+    margin-bottom: 2rem;
+}
+.redirect:hover {
+    color: #e74c3c;
+  }
